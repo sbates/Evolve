@@ -15,7 +15,7 @@ This project uses the following software:
 * [Chefspec](https://github.com/chefspec/chefspec)
 * Ruby 2.4
 
-Chefdk ships with Ruby, Test Kitchen and Inspec but I wanted to just call them out explicitly. In addition, the kitchen-ec2 gem is required. 
+Chefdk ships with Ruby, Test Kitchen, Chefspec and Inspec but I wanted to also call them out explicitly. In addition, the kitchen-ec2 gem is required. 
 
 ## Assumptions
 * The listed software is installed and working properly
@@ -45,3 +45,17 @@ rspec ./spec/unit/recipes/default_spec.rb:28 # mywebserver::default installs htt
 rspec ./spec/unit/recipes/default_spec.rb:33 # mywebserver::default creates a template for the home page
 rspec ./spec/unit/recipes/default_spec.rb:37 # mywebserver::default enables and starts the httpd servce
 ```
+
+## Part 3 Write Code to Pass Unit Tests
+See the code in Evolve/chef/cookbooks/mywebserver/default.rb
+
+```
+chef exec rspec
+....
+
+Finished in 3.31 seconds (files took 1.8 seconds to load)
+4 examples, 0 failures
+```
+
+## Part 4 Use the httpd cookbook 
+created a 2nd recipe myweb.rb executing the same unit tests

@@ -18,7 +18,7 @@
 require 'spec_helper'
 
 describe 'mywebserver::default' do
-  let(:chef_run) {ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511').converge(described_recipe) }
+  let(:chef_run) {ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511', log_level: :debug).converge(described_recipe) }
 
   it 'converges successfully' do
     chef_run.converge(described_recipe)
