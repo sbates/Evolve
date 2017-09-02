@@ -34,3 +34,14 @@ They test that a package is installed, a homepage template file is created and t
 in the cookbook folder Evolve/chef/cookbooks/mywebserver run
 
  ``` chef exec rspec ```
+
+ ```
+ Finished in 0.66068 seconds (files took 1.78 seconds to load)
+4 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/unit/recipes/default_spec.rb:28 # mywebserver::default installs httpd
+rspec ./spec/unit/recipes/default_spec.rb:33 # mywebserver::default creates a template for the home page
+rspec ./spec/unit/recipes/default_spec.rb:37 # mywebserver::default enables and starts the httpd servce
+```
