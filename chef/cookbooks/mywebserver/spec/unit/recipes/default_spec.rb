@@ -15,21 +15,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-
 require 'spec_helper'
 
 describe 'mywebserver::default' do
-  context 'When all attributes are default, on an Ubuntu 16.04' do
-    let(:chef_run) do
-      # for a complete list of available platforms and versions see:
-      # https://github.com/customink/fauxhai/blob/master/PLATFORMS.md
-      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04')
-      runner.converge(described_recipe)
-    end
+  let(:chef_run) {ChefSpec::ServerRunner.new(platform: 'centos', version: '7.3.1611').converge(described_recipe) }
 
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
-    end
+  it 'converges successfully' do
+    chef_run.converge(described_recipe)
+    expect { chef_run }.to_not raise_error
   end
+
+  it 'installs httpd' do
+    chef_run.converge(described_recipe)
+    expect(chef_run).to install_package('httpd')
+  end
+
+  it 'creates a template for the home page' do
+    expect(chef_run).to create_template('/var/www/index.html')
+  end
+
+  it 'enables and starts the httpd servce' do
+    expect(chef_run).to enable_service('httpd')
+    expect(chef_run).to start_service('httpd')
+  end
+
 end

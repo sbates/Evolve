@@ -12,6 +12,7 @@ This project uses the following software:
 * [Test Kitchen](https://github.com/test-kitchen/test-kitchen)
 * [Kitchen-ec2 plugin](https://github.com/test-kitchen/kitchen-ec2)
 * [Inspec](https://www.inspec.io)
+* [Chefspec](https://github.com/chefspec/chefspec)
 * Ruby 2.4
 
 Chefdk ships with Ruby, Test Kitchen and Inspec but I wanted to just call them out explicitly. In addition, the kitchen-ec2 gem is required. 
@@ -24,4 +25,12 @@ Chefdk ships with Ruby, Test Kitchen and Inspec but I wanted to just call them o
 ```
 chef generate cookbook mywebserver -b -C 'Sascha Bates' -m 'sascha.bates@gmail.com' -I 'apachev2'
 ```
-## Part 2 Write a Failing Test
+## Part 2 Write Failing Unit Tests
+Unit tests are written with chefspec and located at chef/cookbooks/mywebserver/spec/unit/recipes/default_spec.rb.
+
+They test that a package is installed, a homepage template file is created and that the service is enabled and running.
+
+### Run the Test
+in the cookbook folder Evolve/chef/cookbooks/mywebserver run
+
+ ``` chef exec rspec ```
