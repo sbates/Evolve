@@ -67,3 +67,6 @@ Finished in 7.55 seconds (files took 1.88 seconds to load)
 
 ## Part 5 Inspec Integration Tests with Kitchen and Vagrant
 In this section we do away with the default recipe, write Inspec integration tests for myweb.rb and fix the breaking test for port 443. Following that we write the .kitchen.yml file to test with a basic vagrant centos box.
+
+## Part 6 Build an AWS Infrastructure with Terraform
+This section adds a terraform direction that creates a basic AWS dev infrastructure, including VPC, Internet Gateway, Public Subnet, Security Group and a Keypair specific to this project.
