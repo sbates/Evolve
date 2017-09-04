@@ -1,6 +1,7 @@
 httpd_service 'default' do
-    action [:create, :start]
-  end
+  listen_ports ['80', '443']
+  action [:create, :start]
+end
   
   httpd_config 'default' do
     source 'default.conf.erb'

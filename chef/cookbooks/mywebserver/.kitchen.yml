@@ -19,10 +19,10 @@ platforms:
   - name: centos-7.3
 
 suites:
-  - name: default
+  - name: vagrant-myweb
     run_list:
-      - recipe[mywebserver::default]
+      - recipe[mywebserver::myweb]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/smoke/vagrant-myweb
     attributes:
