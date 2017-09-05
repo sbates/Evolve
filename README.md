@@ -58,7 +58,7 @@ rspec ./spec/unit/recipes/default_spec.rb:37 # mywebserver::default enables and 
 ```
 
 ## Part 3 Write Code to Pass Unit Tests
-See the code in Evolve/chef/cookbooks/mywebserver/default.rb
+See the code in Evolve/chef/cookbooks/mywebserver/spec/unit
 
 ```
 chef exec rspec
@@ -69,8 +69,11 @@ Finished in 3.31 seconds (files took 1.8 seconds to load)
 ```
 
 ## Part 4 Use the httpd cookbook 
-created a 2nd recipe myweb.rb executing the same unit tests. Now we have 8 tests, all passing
+Created a 2nd recipe called myweb.rb executing the same unit tests. Now we have 8 tests, all passing
 
+files:
+Evolve/chef/cookbooks/mywebserver/recipes/myweb.rb
+Evolve/chef/cookbooks/mywebserver/spec/unit/recipes/myweb_spec.rb
 ```
 Finished in 7.55 seconds (files took 1.88 seconds to load)
 8 examples, 0 failures
@@ -78,6 +81,12 @@ Finished in 7.55 seconds (files took 1.88 seconds to load)
 
 ## Part 5 Inspec Integration Tests with Kitchen and Vagrant
 In this section we do away with the default recipe, write Inspec integration tests for myweb.rb and fix the breaking test for port 443. Following that we write the .kitchen.yml file to test with a basic vagrant centos box.
+Evolve/chef/cookbooks/mywebserver/test/smoke/vagrant-myweb/myweb_test.rb
+Evolve/chef/cookbooks/mywebserver/.kitchen.yml
 
 ## Part 6 Build an AWS Infrastructure with Terraform
 This section adds a terraform direction that creates a basic AWS dev infrastructure, including VPC, Internet Gateway, Public Subnet, Security Group and a Keypair specific to this project.
+Evolve/terraform/infra.tf
+Evolve/terraform/variables.tf
+
+If you have aws credentials set up and ssh keys set up in the default location of ~/.ssh/id_rsa ~/.ssh/id_rsa.pub, you can run ```terraform apply``` and build the infrastructure.
