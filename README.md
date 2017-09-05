@@ -3,6 +3,17 @@ An Evolving Web Server Example
 
 This uses Chef and Test Kitchen to create a web server instance that can be run with Vagrant/Virtualbox or with the included Terraform configuration.
 
+- [Evolve](#evolve)
+  * [Requirements](#requirements)
+  * [Assumptions](#assumptions)
+  * [Part 1 Generate a Cookbook](#part-1-generate-a-cookbook)
+  * [Part 2 Write Failing Unit Tests](#part-2-write-failing-unit-tests)
+    + [Run the Test](#run-the-test)
+  * [Part 3 Write Code to Pass Unit Tests](#part-3-write-code-to-pass-unit-tests)
+  * [Part 4 Use the httpd cookbook](#part-4-use-the-httpd-cookbook)
+  * [Part 5 Inspec Integration Tests with Kitchen and Vagrant](#part-5-inspec-integration-tests-with-kitchen-and-vagrant)
+  * [Part 6 Build an AWS Infrastructure with Terraform](#part-6-build-an-aws-infrastructure-with-terraform)
+
 ## Requirements
 This project uses the following software:
 * [Vagrant](http://www.vagrantup.com)
