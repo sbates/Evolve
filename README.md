@@ -32,6 +32,10 @@ Chefdk ships with Ruby, Test Kitchen, Chefspec and Inspec but I wanted to also c
 * The listed software is installed and working properly
 * You have a working AWS account and an existing credentials file
 
+
+
+Day 2 Set up AWS Access and Command Line Tools
+
 ## Part 1 Generate a Cookbook
 ```
 chef generate cookbook mywebserver -b -C 'Sascha Bates' -m 'sascha.bates@gmail.com' -I 'apachev2'
@@ -92,3 +96,6 @@ files:
 * Evolve/terraform/variables.tf
 
 If you have aws credentials set up and ssh keys set up in the default location of ~/.ssh/id_rsa ~/.ssh/id_rsa.pub, you can run ```terraform apply``` and build the infrastructure.
+
+## Part 7 Test the Cookbook on AWS
+This involves creating a second kitchen test suite in the yaml file. It will make use of terraform outputs to avoid having to hardcode the security group, subnet and keypair name.
