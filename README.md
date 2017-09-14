@@ -1,7 +1,9 @@
 # Evolve
 An Evolving Web Server Example
 
-This uses Chef and Test Kitchen to create a web server instance that can be run with Vagrant/Virtualbox or with the included Terraform configuration.
+This is a project I've been playing with to get some practice in on tools I haven't touched in a year. I was thinking about the couch to 5k program the other day and thought it might be neat to structure this similarly.
+
+The project uses a variety of open source tools to create and test a web server in different infrastructures.
 
 - [Evolve](#evolve)
   * [Requirements](#requirements)
@@ -32,7 +34,8 @@ Chefdk ships with Ruby, Test Kitchen, Chefspec and Inspec but I wanted to also c
 * The listed software is installed and working properly
 * You have a working AWS account and an existing credentials file
 
-
+Day 1 - Set up local development environment
+Day 2 - Generate 
 
 Day 2 Set up AWS Access and Command Line Tools
 
