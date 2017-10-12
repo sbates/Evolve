@@ -1,7 +1,7 @@
-#output "ip" {
-#  value = "${aws_instance.web.public_ip}"
-#}
+output "sg" {
+    value = "${aws_security_group.evolve.id}"
+}
 
-#output "dns" {
-#  value = "${aws_instance.web.public_dns}"
-#}
+output "keypair" {
+    value = "${aws_key_pair.evolve.id}"
+}
