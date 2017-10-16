@@ -34,7 +34,7 @@ Chefdk ships with Ruby, Test Kitchen, Chefspec and Inspec but I wanted to also c
 * The listed software is installed and working properly
 * You have a working AWS account and an existing credentials file
 
-Day 1 - Set up local development environment
-Day 2 - Generate a basic webserver cookbook with Chef tools
-Day 3 - Write failing unit tests 
-Day 4 - Write code to pass unit tests
+#### Day 1 - Set up local development environment
+#### Day 2 - Generate a basic webserver cookbook with Chef tools
+#### Day 3 - Write failing unit tests 
+#### Day 4 - Write code to pass unit tests
